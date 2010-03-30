@@ -1,0 +1,9 @@
+body{
+    background-color: #AAAAAA;
+    font-family: sans-serif;
+}
+#exampleContainer {
+    padding: 5px;
+    border: groove 5px #55FF55;
+    width: 500px;
+}

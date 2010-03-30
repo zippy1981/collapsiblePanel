@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <title>Collapsible Panel Example</title>
 <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="jquery.collapsiblePanel-1.0.0.js"></script>
+<script type="text/javascript" src="jquery.collapsiblePanel.js"></script>
 <script type="text/javascript">
 $().ready(function () {
 	$('#wrapDiv').click(function() {
@@ -19,35 +19,37 @@ $().ready(function () {
 <link type="text/css" rel="stylesheet" href="collapsiblePanel.css"/>
 </head>
 <body>
-<h1 id="collapseExampleTitle">Collapsible Panel Title Example</h1>
-<table id="collapseExampleTable">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Quanity</th>
-			<th>Price</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>120 volt Incandescent Light Bulb</td>
-			<td>5</td>
-			<td>$100.00</td>
-		</tr>
-		<tr>
-			<td>Gallon Leaded Gasoline</td>
-			<td>30</td>
-			<td>$200.00</td>
-		</tr>
-		<tr>
-			<td>Windows Millenium Retail Edition Full</td>
-			<td>1</td>
-			<td>$79.99</td>
-		</tr>
-	</tbody>
-</table>
-<form id="frmOne" action="." method="post">
-	<p><input type="button" id="wrapDiv" value="Wrap Div"/></p>
-</form>
+<div id="exampleContainer">
+	<h2 id="collapseExampleTitle">Collapsible Panel Example</h2>
+	<table id="collapseExampleTable">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Quanity</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>120 volt Incandescent Light Bulb</td>
+				<td>5</td>
+				<td>$100.00</td>
+			</tr>
+			<tr>
+				<td>Gallon Leaded Gasoline</td>
+				<td>30</td>
+				<td>$200.00</td>
+			</tr>
+			<tr>
+				<td>Windows Millenium Retail Edition Full</td>
+				<td>1</td>
+				<td>$79.99</td>
+			</tr>
+		</tbody>
+	</table>
+	<form id="frmOne" action="." method="post">
+		<p><input type="button" id="wrapDiv" value="Wrap Div"/></p>
+	</form>
+</div>
 </body>
 </html>

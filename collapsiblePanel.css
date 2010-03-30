@@ -1,6 +1,16 @@
 ﻿img.collapseExpandToggle {
 	margin-right: 10px;
 }
+.collapsiblePanelOuter {
+	border: solid 1px #000000;
+}
+.collapsiblePanelTitle {
+	padding-left: 3px;
+	border-bottom: solid 3px #000000;
+}
+.collapsiblePanelTitleHover {
+	cursor: pointer;
+}
 .collapseTitleContents {
-	display: inline;
+	display: inline-block;
 }
