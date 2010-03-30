@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Collapsible Panel Example</title>
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jquery.collapsiblePanel-1.0.0.js"></script>
+<script type="text/javascript">
+$().ready(function () {
+	$('#wrapDiv').click(function() {
+		$('#collapseExampleTable').collapsiblePanel({
+			panelId: "collapseExampleTablePanel",
+			titleQuery: "#collapseExampleTitle"
+		});
+	});
+});
+</script>
+<link type="text/css" rel="stylesheet" href="example.css"/>
+<link type="text/css" rel="stylesheet" href="collapsiblePanel.css"/>
+</head>
+<body>
+<h1 id="collapseExampleTitle">Collapsible Panel Title Example</h1>
+<table id="collapseExampleTable">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Quanity</th>
+			<th>Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>120 volt Incandescent Light Bulb</td>
+			<td>5</td>
+			<td>$100.00</td>
+		</tr>
+		<tr>
+			<td>Gallon Leaded Gasoline</td>
+			<td>30</td>
+			<td>$200.00</td>
+		</tr>
+		<tr>
+			<td>Windows Millenium Retail Edition Full</td>
+			<td>1</td>
+			<td>$79.99</td>
+		</tr>
+	</tbody>
+</table>
+<form id="frmOne" action="." method="post">
+	<p><input type="button" id="wrapDiv" value="Wrap Div"/></p>
+</form>
+</body>
+</html>
