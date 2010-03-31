@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64"
+   height="64"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="expandCollapseToggle.svg"
+   onload="startup(evt)">
+  <script>
+  <![CDATA[
+  var svgDocument;
+  
+  var running=false;
+  var blu = 0;
+  var doubleArrow;
+  var isOpen = true;
+  
+  function startup(evt) {
+          O=evt.target;
+          svgDocument=O.ownerDocument;
+          O.setAttribute("onclick", "running=!running;toggle()");
+          doubleArrow = svgDocument.getElementById("layer1");
+          //offset();
+          console.log('expandCollapseToggle.svg onload event complete.');
+  }
+  function offset() {
+          if (!running) return;
+          var rate=1;
+          onestep(rate);
+          window.setTimeout("offset()", 15);
+  }
+  function onestep(i) {
+          var T="rotate("+i+" 32 32) translate(0,-988.36218)";
+          doubleArrow.setAttribute ("transform", T);
+  }
+  function rotate(degrees, step) {
+    blu=0;
+    while (blu != degrees){
+      window.setTimeout("onestep(" + step + ")", 15);
+      blu += step;
+      console.log('blu: %d step: %d degrees: %d', blu, step, degrees);
+    }
+    isOpen = !isOpen;
+  }
+  function toggle() {
+    if (isOpen) {
+      rotate(-90, -1);
+    }
+    else {
+      rotate(90, 1);
+    }
+  }
+  //]]>
+  </script>
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective3618"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="11.313708"
+     inkscape:cx="32.938524"
+     inkscape:cy="36.065869"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showguides="true"
+     inkscape:snap-to-guides="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1033"
+     inkscape:window-x="1276"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     inkscape:guide-bbox="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid5080"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="0,12.8"
+       id="guide5090" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="6,64"
+       id="guide5092" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="57,32"
+       id="guide5094" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="0,51.2"
+       id="guide5096" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="32,32"
+       id="guide5098" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="19,32"
+       id="guide5100" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="45,32"
+       id="guide5102" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="rotate (-90 32 32) translate(0,-988.36218)">
+    <path
+       sodipodi:type="arc"
+       style="fill:#c8c8c8;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99969076999999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="outerCircle"
+       sodipodi:cx="32.198612"
+       sodipodi:cy="32.180195"
+       sodipodi:rx="31.946074"
+       sodipodi:ry="31.819805"
+       d="m 64.144686,32.180195 a 31.946074,31.819805 0 1 1 -63.89214732,0 31.946074,31.819805 0 1 1 63.89214732,0 z"
+       transform="matrix(0.98622647,0,0,0.99013524,0.24487634,988.49943)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.99014753px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 7,1001.3622 12.745098,38.2 12.745098,-38.4 12.745098,38.2 L 57,1001.1622"
+       id="doubleArrows" />
+  </g>
+</svg>
