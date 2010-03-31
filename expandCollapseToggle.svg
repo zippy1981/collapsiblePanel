@@ -18,8 +18,14 @@
    onload="startup(evt)">
   <script>
   <![CDATA[
+  /*
+   * Needs to be in the global scope because it is called by
+   * window.setTimeout();
+   */
   var onestep;
+  // Needs to be in the global scope because it is called by an event.
   var toggle;
+  
   
   var startup = function (evt) {
     var svgDocument; 
@@ -149,6 +155,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-988.36218)">
+    <!-- This path renders the black outer circle and its grey filling. -->
     <path
        sodipodi:type="arc"
        style="fill:#c8c8c8;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99969076999999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -159,6 +166,7 @@
        sodipodi:ry="31.819805"
        d="m 64.144686,32.180195 a 31.946074,31.819805 0 1 1 -63.89214732,0 31.946074,31.819805 0 1 1 63.89214732,0 z"
        transform="matrix(0.98622647,0,0,0.99013524,0.24487634,988.49943)" />
+    <!-- This path renders the double arrow. -->
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99014753px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 7,1001.3622 12.745098,38.2 12.745098,-38.4 12.745098,38.2 L 57,1001.1622"
