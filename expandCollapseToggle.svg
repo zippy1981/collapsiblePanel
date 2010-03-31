@@ -18,53 +18,42 @@
    onload="startup(evt)">
   <script>
   <![CDATA[
-  var svgDocument;
+  var onestep;
+  var toggle;
   
-  var running=false;
-  var blu = 0;
-  var doubleArrow;
-  var isOpen = true;
-  
-  function startup(evt) {
-          O=evt.target;
-          svgDocument=O.ownerDocument;
-          O.setAttribute("onclick", "running=!running;toggle()");
-          doubleArrow = svgDocument.getElementById("layer1");
-          //offset();
-          console.log('expandCollapseToggle.svg onload event complete.');
-  }
-
-  function offset() {
-    if (!running) return;
-    var rate=1;
-    onestep(rate);
-    window.setTimeout("offset()", 15);
-  }
-
-  function onestep(i, maxDegrees) {
-    if (blu == maxDegrees) { return; }
-    var T = "rotate(" + blu + " 32 32) translate(0,-988.36218)";
-    console.log('blu: %d i: %d degrees: %d', blu, i, maxDegrees);
-    console.log("transform='%s'", T);
-    doubleArrow.setAttribute ("transform", T);
-    window.setTimeout("onestep(" + i + "," + maxDegrees + ")", 15);
-    blu += i;
-  }
-
-  function rotate(startDegrees, stopDegrees, step) {
-    blu = startDegrees;
-    
-    onestep(step, stopDegrees);
-    
-    isOpen = !isOpen;
-  }
-
-  function toggle() {
-    if (isOpen) {
-      rotate(0, -90, -1);
+  var startup = function (evt) {
+    var svgDocument; 
+    var doubleArrow;
+    var isOpen = true;
+    var O = evt.target;
+    svgDocument=O.ownerDocument;
+    O.setAttribute("onclick", "toggle()");
+    doubleArrow = svgDocument.getElementById("layer1");
+    console.log('expandCollapseToggle.svg onload event complete.');
+          
+    function offset() {
+      if (!running) return;
+      var rate=1;
+      onestep(rate);
+      window.setTimeout("offset()", 15);
     }
-    else {
-      rotate(-90, 0, 1);
+  
+    onestep = function(curDegrees, i, maxDegrees) {
+      if (curDegrees == maxDegrees) { return; }
+      var T = "rotate(" + curDegrees + " 32 32) translate(0,-988.36218)";
+      doubleArrow.setAttribute ("transform", T);
+      curDegrees += i;
+      window.setTimeout("onestep(" + curDegrees + ", " + i + ", " + maxDegrees + ")", 15);
+    }
+  
+    var rotate = function(startDegrees, stopDegrees, step) {     
+      onestep(startDegrees, step, stopDegrees);
+      isOpen = !isOpen;
+    }
+  
+    toggle = function() {
+      if (isOpen) { rotate(0, -90, -1); }
+      else { rotate(-90, 0, 1); }
     }
   }
   //]]>
