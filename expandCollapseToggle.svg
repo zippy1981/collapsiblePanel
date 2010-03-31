@@ -33,31 +33,38 @@
           //offset();
           console.log('expandCollapseToggle.svg onload event complete.');
   }
+
   function offset() {
-          if (!running) return;
-          var rate=1;
-          onestep(rate);
-          window.setTimeout("offset()", 15);
+    if (!running) return;
+    var rate=1;
+    onestep(rate);
+    window.setTimeout("offset()", 15);
   }
-  function onestep(i) {
-          var T="rotate("+i+" 32 32) translate(0,-988.36218)";
-          doubleArrow.setAttribute ("transform", T);
+
+  function onestep(i, maxDegrees) {
+    if (blu == maxDegrees) { return; }
+    var T = "rotate(" + blu + " 32 32) translate(0,-988.36218)";
+    console.log('blu: %d i: %d degrees: %d', blu, i, maxDegrees);
+    console.log("transform='%s'", T);
+    doubleArrow.setAttribute ("transform", T);
+    window.setTimeout("onestep(" + i + "," + maxDegrees + ")", 15);
+    blu += i;
   }
-  function rotate(degrees, step) {
-    blu=0;
-    while (blu != degrees){
-      window.setTimeout("onestep(" + step + ")", 15);
-      blu += step;
-      console.log('blu: %d step: %d degrees: %d', blu, step, degrees);
-    }
+
+  function rotate(startDegrees, stopDegrees, step) {
+    blu = startDegrees;
+    
+    onestep(step, stopDegrees);
+    
     isOpen = !isOpen;
   }
+
   function toggle() {
     if (isOpen) {
-      rotate(-90, -1);
+      rotate(0, -90, -1);
     }
     else {
-      rotate(90, 1);
+      rotate(-90, 0, 1);
     }
   }
   //]]>
@@ -152,7 +159,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="rotate (-90 32 32) translate(0,-988.36218)">
+     transform="translate(0,-988.36218)">
     <path
        sodipodi:type="arc"
        style="fill:#c8c8c8;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99969076999999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
