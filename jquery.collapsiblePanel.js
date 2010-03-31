@@ -5,7 +5,7 @@
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) version 2 licenses.
  * This software is not distributed under version 3 or later of the GPL.
  *
- * Version 0.1.0
+ * Version 0.2.0
  *
 */
 (function($) {
@@ -13,10 +13,11 @@
  * Wraps a jquery resultset in a collapsible panel.
  *
  * @name collapsiblePanel
- * @param panelId Assigns the given id to the outer div of the collapsible panel.
- * @param titleQuery The elements in ths jQuery are inserted into the title section of the collapsible panel.
- * @param collapsedImage Url to the image to display when the panel is collapsed.
- * @param expandedImage Url to display when the panel is expanded.
+ * @param panelId (string) Assigns the given id to the outer div of the collapsible panel.
+ * @param titleQuery (jQuery) The elements in ths jQuery are inserted into the title section of the collapsible panel.
+ * @param collapsedImage (url) Url of the image to display on top of the panel when the panel is collapsed.
+ * @param expandedImage (url) Url of the image to display on top of the panel when the panel is expanded.
+ * @param startCollapsed (boolean) Set to true to collapse the panel upon rendering it.
  * @author Justin Dearing (http://zippy1981.dyndns.org)
  * @example $("#tableId").collapsiblePanel();
  *
@@ -34,7 +35,8 @@
 				panelId: null,
 				titleQuery: null,
 				collapsedImage: "panelCollapsed.png",
-				expandedImage: "panelExpanded.png"
+				expandedImage: "panelExpanded.png",
+				startCollapsed: false
 			}
 				
 			options = $.extend(defaults, options);
@@ -94,9 +96,14 @@
 					panelDiv = panelContents.wrap(panelDiv).parent();
 					
 					titleDiv.insertBefore(panelContents);
-					titleDiv.click(function () {
+					if (options.startCollapsed) {
 						collapsePanel(panelDiv);
-					});
+					}
+					else {
+						titleDiv.click(function () {
+							collapsePanel(panelDiv);
+						});
+					}
 				}
 			});
 		}

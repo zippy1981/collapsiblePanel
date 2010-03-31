@@ -16,6 +16,11 @@ $().ready(function () {
 			panelId: "collapseExampleParagraphPanel",
 			titleQuery: "#collapseExampleParagraphTitle"
 		});
+		$('#preCollapsedExampleParagraph').collapsiblePanel({
+			panelId: "preCollapsedExampleParagraphPanel",
+			titleQuery: "#preCollapsedExampleParagraphTitle",
+			startCollapsed: true
+		});
 	});
 });
 </script>
@@ -24,7 +29,7 @@ $().ready(function () {
 </head>
 <body>
 <div id="exampleContainer">
-	<h2 id="collapseExampleTableTitle">Collapsible Panel Example</h2>
+	<h3 id="collapseExampleTableTitle">Collapsible Panel Example</h3>
 	<table id="collapseExampleTable">
 		<thead>
 			<tr>
@@ -52,8 +57,10 @@ $().ready(function () {
 		</tbody>
 	</table>
 	<br/>
-	<h2 id="collapseExampleParagraphTitle">Collapsible Panel Example</h2>
+	<h3 id="collapseExampleParagraphTitle">Collapsible Panel Example</h3>
 	<p id="collapseExampleParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vehicula laoreet eros quis volutpat. Maecenas a libero et justo sagittis eleifend eu vitae nunc. Phasellus vulputate egestas porttitor. Integer a purus eu libero volutpat dictum. Fusce ultricies nisi ut dui ultrices semper. Vivamus auctor sollicitudin sem eget euismod. Curabitur eget sapien turpis. Quisque quis sem risus. Nullam non tellus eros. Nulla in lectus odio.</p>
+	<h3 id="preCollapsedExampleParagraphTitle">Precollapsed Example</h3>
+	<p id="preCollapsedExampleParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vehicula laoreet eros quis volutpat. Maecenas a libero et justo sagittis eleifend eu vitae nunc. Phasellus vulputate egestas porttitor. Integer a purus eu libero volutpat dictum. Fusce ultricies nisi ut dui ultrices semper. Vivamus auctor sollicitudin sem eget euismod. Curabitur eget sapien turpis. Quisque quis sem risus. Nullam non tellus eros. Nulla in lectus odio.</p>
 	<form id="frmOne" action="." method="post">
 		<p><input type="button" id="wrapDiv" value="Wrap Div"/></p>
 	</form>
