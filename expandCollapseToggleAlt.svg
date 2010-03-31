@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64"
+   height="64"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="expandCollapseToggleAlt.svg"
+   onload="startup(evt)">
+  <script
+     id="script2836">
+  /*
+   * Needs to be in the global scope because it is called by
+   * window.setTimeout();
+   */
+  var onestep;
+  // Needs to be in the global scope because it is called by an event.
+  var toggle;
+  
+  
+  var startup = function (evt) {
+    var svgDocument; 
+    var doubleArrow;
+    var isOpen = true;
+    var O = evt.target;
+    svgDocument=O.ownerDocument;
+    O.setAttribute(&quot;onclick&quot;, &quot;toggle()&quot;);
+    doubleArrow = svgDocument.getElementById(&quot;layer1&quot;);
+    console.log('expandCollapseToggle.svg onload event complete.');
+          
+    function offset() {
+      if (!running) return;
+      var rate=1;
+      onestep(rate);
+      window.setTimeout(&quot;offset()&quot;, 15);
+    }
+  
+    onestep = function(curDegrees, i, maxDegrees) {
+      if (curDegrees == maxDegrees) { return; }
+      var T = &quot;rotate(&quot; + curDegrees + &quot; 32 32) translate(0,-988.36218)&quot;;
+      doubleArrow.setAttribute (&quot;transform&quot;, T);
+      curDegrees += i;
+      window.setTimeout(&quot;onestep(&quot; + curDegrees + &quot;, &quot; + i + &quot;, &quot; + maxDegrees + &quot;)&quot;, 15);
+    }
+  
+    var rotate = function(startDegrees, stopDegrees, step) {     
+      onestep(startDegrees, step, stopDegrees);
+      isOpen = !isOpen;
+    }
+  
+    toggle = function() {
+      if (isOpen) { rotate(0, -90, -1); }
+      else { rotate(-90, 0, 1); }
+    }
+  }
+  //</script>
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3704">
+      <stop
+         style="stop-color:#ff0000;stop-opacity:1;"
+         offset="0"
+         id="stop3706" />
+      <stop
+         style="stop-color:#ff0000;stop-opacity:0;"
+         offset="1"
+         id="stop3708" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective3618"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="11.313708"
+     inkscape:cx="30.031411"
+     inkscape:cy="31.027733"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showguides="true"
+     inkscape:snap-to-guides="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="969"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     inkscape:guide-bbox="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid5080"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="0,12.8"
+       id="guide5090" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="6,64"
+       id="guide5092" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="57,32"
+       id="guide5094" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="0,51.2"
+       id="guide5096" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="32,32"
+       id="guide5098" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="19,32"
+       id="guide5100" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="45,32"
+       id="guide5102" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-988.36218)">
+    <!-- This path renders the black outer circle and its grey filling. -->
+    <path
+       sodipodi:type="arc"
+       style="fill:#986601;fill-opacity:1;fill-rule:nonzero;stroke:#980101;stroke-width:0.99981894;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:0.99981894,0.99981894;stroke-dashoffset:0"
+       id="outerCircle"
+       sodipodi:cx="32.198612"
+       sodipodi:cy="32.180195"
+       sodipodi:rx="31.946074"
+       sodipodi:ry="31.819805"
+       d="M 64.144686,32.180195 C 64.144686,49.753788 49.841941,64 32.198612,64 14.555283,64 0.25253868,49.753788 0.25253868,32.180195 c 0,-17.573593 14.30274432,-31.81980529 31.94607332,-31.81980529 17.643329,0 31.946074,14.24621229 31.946074,31.81980529 z"
+       transform="matrix(0.98622647,0,0,0.99013524,0.24487634,988.49943)" />
+    <!-- This path renders the arrow. -->
+    <path
+       style="fill:none;stroke:#ffff00;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 6,1002.6517 26,47.7105 25,-49"
+       id="doubleArrow" />
+  </g>
+</svg>
