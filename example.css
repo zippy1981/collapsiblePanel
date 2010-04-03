@@ -7,3 +7,6 @@ body{
     border: groove 5px #55FF55;
     width: 500px;
 }
+#exampleContainer object {
+    background: transparent;
+}

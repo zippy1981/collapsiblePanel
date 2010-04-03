@@ -16,8 +16,8 @@
    inkscape:version="0.47 r22583"
    sodipodi:docname="expandCollapseToggle.svg"
    onload="startup(evt)">
-  <script>
-  <![CDATA[
+  <script
+     id="script2836">
   /*
    * Needs to be in the global scope because it is called by
    * window.setTimeout();
@@ -33,23 +33,23 @@
     var isOpen = true;
     var O = evt.target;
     svgDocument=O.ownerDocument;
-    O.setAttribute("onclick", "toggle()");
-    doubleArrow = svgDocument.getElementById("layer1");
+    O.setAttribute(&quot;onclick&quot;, &quot;toggle()&quot;);
+    doubleArrow = svgDocument.getElementById(&quot;layer1&quot;);
     console.log('expandCollapseToggle.svg onload event complete.');
           
     function offset() {
       if (!running) return;
       var rate=1;
       onestep(rate);
-      window.setTimeout("offset()", 15);
+      window.setTimeout(&quot;offset()&quot;, 15);
     }
   
     onestep = function(curDegrees, i, maxDegrees) {
       if (curDegrees == maxDegrees) { return; }
-      var T = "rotate(" + curDegrees + " 32 32) translate(0,-988.36218)";
-      doubleArrow.setAttribute ("transform", T);
+      var T = &quot;rotate(&quot; + curDegrees + &quot; 32 32) translate(0,-988.36218)&quot;;
+      doubleArrow.setAttribute (&quot;transform&quot;, T);
       curDegrees += i;
-      window.setTimeout("onestep(" + curDegrees + ", " + i + ", " + maxDegrees + ")", 15);
+      window.setTimeout(&quot;onestep(&quot; + curDegrees + &quot;, &quot; + i + &quot;, &quot; + maxDegrees + &quot;)&quot;, 15);
     }
   
     var rotate = function(startDegrees, stopDegrees, step) {     
@@ -62,8 +62,7 @@
       else { rotate(-90, 0, 1); }
     }
   }
-  //]]>
-  </script>
+  //</script>
   <defs
      id="defs4">
     <inkscape:perspective
@@ -86,19 +85,19 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.313708"
      inkscape:cx="32.938524"
-     inkscape:cy="36.065869"
+     inkscape:cy="35.314568"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      showguides="true"
      inkscape:snap-to-guides="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1033"
-     inkscape:window-x="1276"
+     inkscape:window-width="1280"
+     inkscape:window-height="969"
+     inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
      inkscape:guide-bbox="true">
@@ -146,7 +145,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -164,7 +163,7 @@
        sodipodi:cy="32.180195"
        sodipodi:rx="31.946074"
        sodipodi:ry="31.819805"
-       d="m 64.144686,32.180195 a 31.946074,31.819805 0 1 1 -63.89214732,0 31.946074,31.819805 0 1 1 63.89214732,0 z"
+       d="M 64.144686,32.180195 C 64.144686,49.753788 49.841941,64 32.198612,64 14.555283,64 0.25253868,49.753788 0.25253868,32.180195 c 0,-17.573593 14.30274432,-31.81980529 31.94607332,-31.81980529 17.643329,0 31.946074,14.24621229 31.946074,31.81980529 z"
        transform="matrix(0.98622647,0,0,0.99013524,0.24487634,988.49943)" />
     <!-- This path renders the double arrow. -->
     <path
