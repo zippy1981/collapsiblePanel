@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <title>Collapsible Panel Example</title>
+<script src="svg.js" type="text/javascript" data-path="." data-debug="false"></script>
 <link type="text/css" rel="stylesheet" href="example.css"/>
 </head>
 <body>
@@ -11,21 +12,37 @@
 	<p>
 		These are the svg images I use to generate the collapsble toggle icons.
 		Eventually I plan on using these directly in my plugin, probably with the
-		help of google's svgweb (http://code.google.com/p/svgweb/).
+		help of google's <a href="http://code.google.com/p/svgweb/">svgweb</a> .
 	</p>
 	<p>
 		<b>Note: </b>
 		Unless you have a plugin third party pluginalready installed,
 		this page will not work in internet explorer.
 	</p>
-	<object data="expandCollapseToggle.svg" width="64" height="64"
+	<!--[if IE]>
+	<object src="expandCollapseToggle.svg"
+		width="64" height="64"
 		type="image/svg+xml">
-		<param name="wmode" value="transparent"> 
+		
 	</object>
-	<object data="expandCollapseToggleAlt.svg" width="64" height="64"
+	<object src="expandCollapseToggleAlt.svg"
+		width="64" height="64"
 		type="image/svg+xml">
-		<param name="wmode" value="transparent"> 
+		
 	</object>
+	<![endif]-->
+	<!--[if !IE]>-->
+	<object data="expandCollapseToggle.svg"
+		width="64" height="64"
+		type="image/svg+xml">
+		
+	</object>
+	<object data="expandCollapseToggleAlt.svg"
+		width="64" height="64"
+		type="image/svg+xml">
+		 
+	</object>
+	<!--<![endif]-->
 </div>
 </body>
 </html>
