@@ -11,7 +11,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="64"
    height="64"
-   id="svg2"
+   id="expandCollapseToggleAlt"
    version="1.1"
    inkscape:version="0.47 r22583"
    sodipodi:docname="expandCollapseToggleAlt.svg"
@@ -29,12 +29,12 @@
   
   var startup = function (evt) {
     var svgDocument; 
-    var doubleArrow;
+    var yellowArrow;
     var isOpen = true;
     var O = evt.target;
     svgDocument=O.ownerDocument;
     O.setAttribute(&quot;onclick&quot;, &quot;toggle()&quot;);
-    doubleArrow = svgDocument.getElementById(&quot;layer1&quot;);
+    yellowArrow = svgDocument.getElementById(&quot;layer1&quot;);
     console.log('expandCollapseToggle.svg onload event complete.');
           
     function offset() {
@@ -47,7 +47,7 @@
     onestep = function(curDegrees, i, maxDegrees) {
       if (curDegrees == maxDegrees) { return; }
       var T = &quot;rotate(&quot; + curDegrees + &quot; 32 32) translate(0,-988.36218)&quot;;
-      doubleArrow.setAttribute (&quot;transform&quot;, T);
+      yellowArrow.setAttribute (&quot;transform&quot;, T);
       curDegrees += i;
       window.setTimeout(&quot;onestep(&quot; + curDegrees + &quot;, &quot; + i + &quot;, &quot; + maxDegrees + &quot;)&quot;, 15);
     }
@@ -180,6 +180,6 @@
     <path
        style="fill:none;stroke:#ffff00;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 6,1002.6517 26,47.7105 25,-49"
-       id="doubleArrow" />
+       id="yellowArrow" />
   </g>
 </svg>
