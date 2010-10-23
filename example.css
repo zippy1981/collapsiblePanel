@@ -2,8 +2,15 @@ body{
     background-color: #AAAAAA;
     font-family: sans-serif;
 }
+h3 {
+    margin: 0;
+}
 #exampleContainer {
     padding: 5px;
     border: groove 5px #55FF55;
     width: 500px;
+}
+#sansTitleQueryPanel img.collapseExpandToggle {
+    position: absolute;
+    right: 7px;
 }

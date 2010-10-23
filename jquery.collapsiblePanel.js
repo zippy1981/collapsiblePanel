@@ -33,7 +33,7 @@
 			//Set the default values, use comma to separate the settings, example:
 			var defaults = {
 				panelId: null,
-				titleQuery: null,
+				titleQuery: '<span>&nbsp;</span>',
 				collapsedImage: "panelCollapsed.png",
 				expandedImage: "panelExpanded.png",
 				startCollapsed: false
